@@ -7,6 +7,9 @@
   <title>Under construction</title>
   <!-- An empty icon, so the browser doesn't log an error looking for favicon.ico -->
   <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -19,24 +22,28 @@
     footer { margin-top: 3rem; font-size: 0.875rem; opacity: 0.75; }
 
     :root {
-      --bar: #2f6fb3;
+      --bar-start: #2f6fb3;
+      --bar-end: #3fb6a8;
       --bar-track: rgba(127, 127, 127, 0.15);
       --muted: #5f6368;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bar: #7fb0e8;
+        --bar-start: #7fb0e8;
+        --bar-end: #7fe0d4;
         --bar-track: rgba(255, 255, 255, 0.12);
         --muted: #aab0b6;
       }
     }
     :root[data-theme="dark"] {
-      --bar: #7fb0e8;
+      --bar-start: #7fb0e8;
+      --bar-end: #7fe0d4;
       --bar-track: rgba(255, 255, 255, 0.12);
       --muted: #aab0b6;
     }
     body { background: Canvas; color: CanvasText; }
 
+    .chart { font-family: 'Fredoka', system-ui, sans-serif; }
     .chart h2 { font-size: 1.25rem; margin-bottom: 0.25rem; }
     .chart .note { color: var(--muted); font-size: 0.875rem; margin-top: 0; }
     .bars { list-style: none; margin: 1rem 0 0; padding: 0; }
@@ -50,13 +57,12 @@
     }
     .bars .label small { color: var(--muted); }
     .bars .track { background: var(--bar-track); border-radius: 3px; height: 1.1rem; }
-    .bars .fill { background: var(--bar); height: 100%; border-radius: 3px; }
+    .bars .fill { background: linear-gradient(90deg, var(--bar-start), var(--bar-end)); height: 100%; border-radius: 3px; }
     .bars .value { font-variant-numeric: tabular-nums; white-space: nowrap; }
   </style>
 </head>
 <body>
   <main>
-    <h1>This site is under construction</h1>
     <p>It will show findings from the College-town home sales dataset.</p>
 
     <section class="chart" aria-labelledby="median-title">
